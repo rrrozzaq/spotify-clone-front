@@ -1,13 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import {
+  FaIconLibrary,
+  FontAwesomeModule,
+} from '@fortawesome/angular-fontawesome';
+import { fontAwesomeIcons } from './shared/font-awesome-icons';
+import { NavigationComponent } from "./layout/navigation/navigation.component";
 
 @Component({
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [FontAwesomeModule, RouterModule, NavigationComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'spotify';
+
+  private faIconLibrary = inject(FaIconLibrary);
+
+  ngOnInit(): void {
+    this.initFontAwesome();
+  }
+
+  initFontAwesome() {
+    this.faIconLibrary.addIcons(...fontAwesomeIcons);
+  }
 }
