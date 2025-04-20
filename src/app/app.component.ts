@@ -7,9 +7,10 @@ import {
 import { fontAwesomeIcons } from './shared/font-awesome-icons';
 import { NavigationComponent } from "./layout/navigation/navigation.component";
 import { LibraryComponent } from "./layout/library/library.component";
+import { HeaderComponent } from "./layout/header/header.component";
 
 @Component({
-  imports: [FontAwesomeModule, RouterModule, NavigationComponent, LibraryComponent],
+  imports: [FontAwesomeModule, RouterModule, NavigationComponent, LibraryComponent, HeaderComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
