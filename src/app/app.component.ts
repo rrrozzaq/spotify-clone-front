@@ -8,9 +8,11 @@ import { fontAwesomeIcons } from './shared/font-awesome-icons';
 import { NavigationComponent } from "./layout/navigation/navigation.component";
 import { LibraryComponent } from "./layout/library/library.component";
 import { HeaderComponent } from "./layout/header/header.component";
+import { ToastService } from './service/toast.service';
+import { NgbToast } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  imports: [FontAwesomeModule, RouterModule, NavigationComponent, LibraryComponent, HeaderComponent],
+  imports: [FontAwesomeModule, RouterModule, NavigationComponent, LibraryComponent, HeaderComponent, NgbToast],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -19,6 +21,8 @@ export class AppComponent implements OnInit {
   title = 'spotify';
 
   private faIconLibrary = inject(FaIconLibrary);
+
+  toastService = inject(ToastService)
 
   ngOnInit(): void {
     this.initFontAwesome();
