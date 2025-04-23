@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-library',
-  imports: [FontAwesomeModule],
+  imports: [RouterModule, FontAwesomeModule],
   templateUrl: './library.component.html',
   styleUrl: './library.component.scss',
 })
